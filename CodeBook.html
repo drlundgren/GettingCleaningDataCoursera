@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title>Code Book</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>Code Book</h1>
+
+<p>For each subject and each activity we have computed the mean and standard deviation for a selected set of measurements 
+from the original data set (all the mean and standard deviationvalues in the original dataset).</p>
+
+<p>First we provide some information on the measured variables (features).They come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix &#39;t&#39; to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. </p>
+
+<p>Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. </p>
+
+<p>Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). </p>
+
+<p>Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the &#39;f&#39; to indicate frequency domain signals). </p>
+
+<p>These signals were used to estimate variables of the feature vector for each pattern:<br/>
+&#39;-XYZ&#39; is used to denote 3-axial signals in the X, Y and Z directions.</p>
+
+<p>The features are normalized and bounded within [-1,1].</p>
+
+<p>Please see README.md for details on how the original 
+data set was used to produce this tidy dataset.</p>
+
+<p>Below we provide the code book for the tidy data set.</p>
+
+<h4>[1] &ldquo;subject&rdquo;</h4>
+
+<pre><code>This is the ID of the person who has carried the smartphone. It ranges from 1 to 30.
+</code></pre>
+
+<h4>[2] &ldquo;activity&rdquo;</h4>
+
+<pre><code>This is the inferred activity. It can take one of the following six values: 
+WALKING 
+WALKING_UPSTAIRS 
+WALKING_DOWNSTAIRS 
+SITTING 
+STANDING 
+LAYING
+</code></pre>
+
+<h4>[3-68] These columns contains the mean and standard deviations (computed per subject and per activity) for the following variables:</h4>
+
+<p>[3] &ldquo;tBodyAcc-mean-X&rdquo;<br/>
+ [4] &ldquo;tBodyAcc-mean-Y&rdquo;<br/>
+ [5] &ldquo;tBodyAcc-mean-Z&rdquo;<br/>
+ [6] &ldquo;tBodyAcc-std-X&rdquo;<br/>
+ [7] &ldquo;tBodyAcc-std-Y&rdquo;<br/>
+ [8] &ldquo;tBodyAcc-std-Z&rdquo;<br/>
+ [9] &ldquo;tGravityAcc-mean-X&rdquo;<br/>
+[10] &ldquo;tGravityAcc-mean-Y&rdquo;<br/>
+[11] &ldquo;tGravityAcc-mean-Z&rdquo;<br/>
+[12] &ldquo;tGravityAcc-std-X&rdquo;<br/>
+[13] &ldquo;tGravityAcc-std-Y&rdquo;<br/>
+[14] &ldquo;tGravityAcc-std-Z&rdquo;<br/>
+[15] &ldquo;tBodyAccJerk-mean-X&rdquo;<br/>
+[16] &ldquo;tBodyAccJerk-mean-Y&rdquo;<br/>
+[17] &ldquo;tBodyAccJerk-mean-Z&rdquo;<br/>
+[18] &ldquo;tBodyAccJerk-std-X&rdquo;<br/>
+[19] &ldquo;tBodyAccJerk-std-Y&rdquo;<br/>
+[20] &ldquo;tBodyAccJerk-std-Z&rdquo;<br/>
+[21] &ldquo;tBodyGyro-mean-X&rdquo;<br/>
+[22] &ldquo;tBodyGyro-mean-Y&rdquo;<br/>
+[23] &ldquo;tBodyGyro-mean-Z&rdquo;<br/>
+[24] &ldquo;tBodyGyro-std-X&rdquo;<br/>
+[25] &ldquo;tBodyGyro-std-Y&rdquo;<br/>
+[26] &ldquo;tBodyGyro-std-Z&rdquo;<br/>
+[27] &ldquo;tBodyGyroJerk-mean-X&rdquo;<br/>
+[28] &ldquo;tBodyGyroJerk-mean-Y&rdquo;<br/>
+[29] &ldquo;tBodyGyroJerk-mean-Z&rdquo;<br/>
+[30] &ldquo;tBodyGyroJerk-std-X&rdquo;<br/>
+[31] &ldquo;tBodyGyroJerk-std-Y&rdquo;<br/>
+[32] &ldquo;tBodyGyroJerk-std-Z&rdquo;<br/>
+[33] &ldquo;tBodyAccMag-mean&rdquo;<br/>
+[34] &ldquo;tBodyAccMag-std&rdquo;<br/>
+[35] &ldquo;tGravityAccMag-mean&rdquo;<br/>
+[36] &ldquo;tGravityAccMag-std&rdquo;<br/>
+[37] &ldquo;tBodyAccJerkMag-mean&rdquo;<br/>
+[38] &ldquo;tBodyAccJerkMag-std&rdquo;<br/>
+[39] &ldquo;tBodyGyroMag-mean&rdquo;<br/>
+[40] &ldquo;tBodyGyroMag-std&rdquo;<br/>
+[41] &ldquo;tBodyGyroJerkMag-mean&rdquo;<br/>
+[42] &ldquo;tBodyGyroJerkMag-std&rdquo;<br/>
+[43] &ldquo;fBodyAcc-mean-X&rdquo;<br/>
+[44] &ldquo;fBodyAcc-mean-Y&rdquo;<br/>
+[45] &ldquo;fBodyAcc-mean-Z&rdquo;<br/>
+[46] &ldquo;fBodyAcc-std-X&rdquo;<br/>
+[47] &ldquo;fBodyAcc-std-Y&rdquo;<br/>
+[48] &ldquo;fBodyAcc-std-Z&rdquo;<br/>
+[49] &ldquo;fBodyAccJerk-mean-X&rdquo;<br/>
+[50] &ldquo;fBodyAccJerk-mean-Y&rdquo;<br/>
+[51] &ldquo;fBodyAccJerk-mean-Z&rdquo;<br/>
+[52] &ldquo;fBodyAccJerk-std-X&rdquo;<br/>
+[53] &ldquo;fBodyAccJerk-std-Y&rdquo;<br/>
+[54] &ldquo;fBodyAccJerk-std-Z&rdquo;<br/>
+[55] &ldquo;fBodyGyro-mean-X&rdquo;<br/>
+[56] &ldquo;fBodyGyro-mean-Y&rdquo;<br/>
+[57] &ldquo;fBodyGyro-mean-Z&rdquo;<br/>
+[58] &ldquo;fBodyGyro-std-X&rdquo;<br/>
+[59] &ldquo;fBodyGyro-std-Y&rdquo;<br/>
+[60] &ldquo;fBodyGyro-std-Z&rdquo;<br/>
+[61] &ldquo;fBodyAccMag-mean&rdquo;<br/>
+[62] &ldquo;fBodyAccMag-std&rdquo;<br/>
+[63] &ldquo;fBodyBodyAccJerkMag-mean&rdquo;<br/>
+[64] &ldquo;fBodyBodyAccJerkMag-std&rdquo;<br/>
+[65] &ldquo;fBodyBodyGyroMag-mean&rdquo;<br/>
+[66] &ldquo;fBodyBodyGyroMag-std&rdquo;<br/>
+[67] &ldquo;fBodyBodyGyroJerkMag-mean&rdquo;<br/>
+[68] &ldquo;fBodyBodyGyroJerkMag-std&rdquo;&ldquo;</p>
+
+</body>
+
+</html>
+
