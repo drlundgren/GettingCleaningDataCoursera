@@ -4,6 +4,8 @@ GettingCleaningDataCoursera
 The run_analysis.R script assumes the existence of the 
 "UCI HAR Dataset" (and a directory with the same name to 
 be present in the current working directory).
+Change the working directory to your directory in which 
+you have the "UCI HAR Dataset" subdirectory. Then simply execute the script (it takes no arguments). It will produce a tidy data set and also write it to a file named "tidyDataset.txt" inside the "UCI HAR Dataset" directory. 
 
 This script reads the test and train data and merges them 
 into one dataset, then it extracts only the measurements 
